@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context="com.example.tourguide.RegisterActivity">
+
+
+    <EditText
+        android:id="@+id/etName"
+        android:hint="Enter your first name..."
+        style="@style/DesignXML"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:hint="Enter your last name..."
+        style="@style/DesignXML"
+        android:layout_below="@+id/etName"/>
+
+    <EditText
+        android:id="@+id/etPhn"
+        android:hint="Enter Phone Number..."
+        style="@style/DesignXML"
+        android:layout_below="@+id/etLastName"/>
+
+    <EditText
+        android:id="@+id/etCountry"
+        android:hint="Enter Your Country..."
+        style="@style/DesignXML"
+        android:layout_below="@+id/etPhn"/>
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:hint="Enter username..."
+        style="@style/DesignXML"
+        android:layout_below="@+id/etCountry"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:hint="Enter password..."
+        style="@style/DesignXML"
+        android:inputType="textPassword"
+        android:layout_below="@+id/etUsername"/>
+
+    <TextView
+        android:id="@+id/tvMH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOUR GUIDE"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:textColorHint="#000000"
+        android:backgroundTint="#F07E86"
+        android:layout_below="@+id/etPassword"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
+
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="Register"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:textColorHint="#0E1E4D"
+        android:background="#8CA1D4"/>
+
+
+
+</RelativeLayout>

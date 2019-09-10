@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context="com.example.tourguide.LoginActivity">
+
+    <EditText
+        android:id="@+id/etloginUsername"
+        android:hint="Enter username..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint=" #000000"
+        android:backgroundTint=" #A4DB7F"
+        android:layout_margin="20dp"
+        android:layout_above="@+id/etloginPassword"
+        />git
+
+    <EditText
+        android:id="@+id/etloginPassword"
+        android:hint="Enter password..."
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint=" #000000"
+        android:backgroundTint=" #A4DB7F"
+        android:layout_margin="20dp"
+        android:layout_above="@+id/btnLogin"
+        />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Login"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#8CA1D4"
+        android:textColorHint="#0E1E4D"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="Register"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:textColorHint="#0E1E4D"
+        android:layout_below="@+id/btnLogin"
+        android:background="#8CA1D4"/>
+
+
+
+</RelativeLayout>
