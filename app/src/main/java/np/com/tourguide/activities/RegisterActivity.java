@@ -1,7 +1,10 @@
-package com.example.tourguide;
+package np.com.tourguide.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import np.com.tourguide.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

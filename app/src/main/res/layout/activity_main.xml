@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/dashboard"
     android:orientation="vertical"
-    tools:context="com.example.tourguide.MainActivity">
+    tools:context="com.com.tourguide.np.example.tourguide.activities.MainActivity">
 
     <TextView
         android:id="@+id/tvMH"

@@ -1,58 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg"
-    tools:context="com.example.tourguide.LoginActivity">
+    android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/etloginUsername"
-        android:hint="Enter username..."
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint=" #000000"
-        android:backgroundTint=" #A4DB7F"
-        android:layout_margin="20dp"
-        android:layout_above="@+id/etloginPassword"
-        />git
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp"
+        tools:context=".activities.LoginActivity">
 
-    <EditText
-        android:id="@+id/etloginPassword"
-        android:hint="Enter password..."
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint=" #000000"
-        android:backgroundTint=" #A4DB7F"
-        android:layout_margin="20dp"
-        android:layout_above="@+id/btnLogin"
-        />
+        <ImageView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@drawable/logo" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:text="Login"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="#8CA1D4"
-        android:textColorHint="#0E1E4D"
-        android:layout_centerInParent="true"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Email"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:text="Register"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:textColorHint="#0E1E4D"
-        android:layout_below="@+id/btnLogin"
-        android:background="#8CA1D4"/>
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Password"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
 
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Forgot Password ?"
+            android:drawableLeft="@drawable/ic_lock"
+            android:paddingTop="@dimen/_4sdp"
+            android:onClick="openForgetPassword"
+            android:paddingBottom="@dimen/_4sdp"
+            android:drawablePadding="@dimen/_6sdp"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/drawable_button"
+            android:stateListAnimator="@null"
+            android:onClick="login"
+            android:text="Login"
+            android:textColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_15sdp"
+            android:onClick="openRegister">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
+                android:text="Don't have account ? "
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_9sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
+                android:text="Register Here"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/_9sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+</layout>

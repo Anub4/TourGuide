@@ -1,76 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.RegisterActivity">
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg"
-    tools:context="com.example.tourguide.RegisterActivity">
+    android:fillViewport="true">
 
-
-    <EditText
-        android:id="@+id/etName"
-        android:hint="Enter your first name..."
-        style="@style/DesignXML"
-        android:layout_alignParentTop="true"/>
-
-    <EditText
-        android:id="@+id/etLastName"
-        android:hint="Enter your last name..."
-        style="@style/DesignXML"
-        android:layout_below="@+id/etName"/>
-
-    <EditText
-        android:id="@+id/etPhn"
-        android:hint="Enter Phone Number..."
-        style="@style/DesignXML"
-        android:layout_below="@+id/etLastName"/>
-
-    <EditText
-        android:id="@+id/etCountry"
-        android:hint="Enter Your Country..."
-        style="@style/DesignXML"
-        android:layout_below="@+id/etPhn"/>
-
-    <EditText
-        android:id="@+id/etUsername"
-        android:hint="Enter username..."
-        style="@style/DesignXML"
-        android:layout_below="@+id/etCountry"/>
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:hint="Enter password..."
-        style="@style/DesignXML"
-        android:inputType="textPassword"
-        android:layout_below="@+id/etUsername"/>
-
-    <TextView
-        android:id="@+id/tvMH"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TOUR GUIDE"
-        android:textSize="50dp"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:textColorHint="#000000"
-        android:backgroundTint="#F07E86"
-        android:layout_below="@+id/etPassword"
-        android:fontFamily="cursive"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp">
 
+        <ImageView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:src="@drawable/logo" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Email"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:text="Register"
-        android:layout_alignParentBottom="true"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:textColorHint="#0E1E4D"
-        android:background="#8CA1D4"/>
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Full Name"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
 
+        <EditText
+            android:id="@+id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="PUBG IGN (In-Game Name)"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
+
+        <EditText
+            android:id="@+id/etPUBGName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="PUBG Name"
+            android:inputType="text"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Phone Number"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
+
+        <EditText
+            android:id="@+id/etPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Phone Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Password"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Confirm Password"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/_9sdp" />
+
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/drawable_round_border"
+            android:hint="Re-Enter Password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_9sdp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/drawable_button"
+            android:stateListAnimator="@null"
+            android:onClick="register"
+            android:text="Register"
+            android:textColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_15sdp"
+            android:onClick="openLogin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
+                android:text="Already have account ? "
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/_9sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
+                android:text="Login"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/_9sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+</layout>

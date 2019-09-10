@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "209962917199",
+    "firebase_url": "https://tour-guide-2022f.firebaseio.com",
+    "project_id": "tour-guide-2022f",
+    "storage_bucket": "tour-guide-2022f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209962917199:android:24e141b634b0dfab8e393a",
+        "android_client_info": {
+          "package_name": "np.com.tourguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209962917199-n7ohv59mj7he0kh2k17lljh89m013jtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxyPUzrmkfZ-rkPgrgcxzMHli1RoslG8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209962917199-n7ohv59mj7he0kh2k17lljh89m013jtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.tourguide;
+package np.com.tourguide;
 
 import org.junit.Test;
 
