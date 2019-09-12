@@ -63,17 +63,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
             android:fontFamily="@font/quicksand_medium"
-            android:text="PUBG IGN (In-Game Name)"
+            android:text="Country"
             android:textColor="@color/colorDarkGray"
             android:textSize="@dimen/_9sdp" />
 
         <EditText
-            android:id="@+id/etPUBGName"
+            android:id="@+id/etCountry"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/drawable_round_border"
-            android:hint="PUBG Name"
+            android:hint="Country"
             android:inputType="text"
             android:paddingLeft="@dimen/_5sdp"
             android:textSize="@dimen/_9sdp" />
