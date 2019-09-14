@@ -2,6 +2,7 @@ package np.com.tourguide.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         b = DataBindingUtil.setContentView(this, R.layout.activity_login);
-
     }
 
     public void openRegister(View view) {
@@ -26,9 +26,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-
+        if (!validate()) return;
     }
 
     public void openForgetPassword(View view) {
+
+    }
+
+    private boolean validate() {
+        if (TextUtils.isEmpty(b.etEmail.getText().toString().trim())) {
+            b.etEmail.setError("Email is required!!!");
+            b.etEmail.requestFocus();
+            return false;
+        } else if (TextUtils.isEmpty(b.etPassword.getText().toString().trim())) {
+            b.etPassword.setError("Password is required!!!");
+            b.etPassword.requestFocus();
+            return false;
+        }
+        return true;
     }
 }
