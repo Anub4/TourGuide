@@ -16,6 +16,7 @@ public class LoginTest {
     private String email;
     private String password;
 
+
     @Before
     public void run() {
         validate = new Validation();
@@ -23,13 +24,16 @@ public class LoginTest {
 
     @Test
     public void is_email_empty() {
+        String email="";
         assertEquals(true, validate.isEmpty(email));
     }
 
     @Test
     public void is_password_empty() {
+        String password="";
         assertEquals(true, validate.isEmpty(password));
     }
+
 
     @Test
     public void is_email_valid() {
