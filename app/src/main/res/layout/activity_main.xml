@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard"
     android:orientation="vertical"
-    tools:context="com.com.tourguide.np.example.tourguide.activities.MainActivity">
+    tools:context=".activities.MainActivity">
+
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="#c94456"
+        android:text="Get Started!"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/tvMH"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WELCOME TO OUR TOUR GUIDE"
-        android:layout_centerInParent="true"
-        android:textSize="50dp"
-        android:gravity="center"
-        android:textColorHint="#fc035a"
-        android:backgroundTint="#F07E86"
         android:layout_below="@+id/etPassword"
-        android:fontFamily="cursive" />
-
-    <Button
-        android:id="@+id/btnGetStarted"
-        android:text="Get Started!"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="#c94456"
-        android:fontFamily="cursive"
-        android:textSize="30dp"
-        />
+        android:layout_centerInParent="true"
+        android:backgroundTint="#F07E86"
+        android:gravity="center"
+        android:text="WELCOME TO OUR TOUR GUIDE"
+        android:textColorHint="#fc035a"
+        android:textSize="50dp" />
 
 
 </RelativeLayout>
