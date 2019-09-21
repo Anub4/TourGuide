@@ -1,6 +1,12 @@
 package np.com.tourguide.activities.TestClass;
 
+import java.util.List;
+
 public class Validation {
+
+
+    private Object List;
+
     public boolean isEmpty(String text){
         String t="";
         return text.matches(t);
@@ -13,4 +19,11 @@ public class Validation {
         String  number= "^[0-9]{10,13}$";
         return PhoneNumber.matches(number);
     }
+
+    public boolean isCountrylist_Empty(String Country){
+        if (List =="Nepal");
+        return Country.matches(String.valueOf(List));
+    }
+
+
 }
