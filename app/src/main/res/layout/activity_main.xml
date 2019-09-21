@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activities.MainActivity">
+<layout>
 
-    <Button
-        android:id="@+id/btnGetStarted"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:backgroundTint="#c94456"
-        android:text="Get Started!"
-        android:textSize="30dp" />
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        tools:context=".activities.MainActivity">
 
-    <TextView
-        android:id="@+id/tvMH"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
-        android:layout_centerInParent="true"
-        android:backgroundTint="#F07E86"
-        android:gravity="center"
-        android:text="WELCOME TO OUR TOUR GUIDE"
-        android:textColorHint="#fc035a"
-        android:textSize="50dp" />
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_main" />
 
-
-</RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</layout>
