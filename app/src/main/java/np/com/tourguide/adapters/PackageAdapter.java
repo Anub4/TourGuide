@@ -14,16 +14,16 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
+import np.com.tourguide.activities.PackageDetailsActivity;
 import np.com.tourguide.R;
-import np.com.tourguide.activities.PackageActivity;
-import np.com.tourguide.models.Tour;
+import np.com.tourguide.models.Package;
 
-public class TourAdapter extends RecyclerView.Adapter<TourAdapter.Holder> {
+public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.Holder> {
 
     private Context context;
-    private List<Tour> tourList;
+    private List<Package> tourList;
 
-    public TourAdapter(Context context, List<Tour> tourList) {
+    public PackageAdapter(Context context, List<Package> tourList) {
         this.context = context;
         this.tourList = tourList;
     }
@@ -31,21 +31,20 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.Holder> {
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_tour, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_package, parent, false);
         return new Holder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Tour tour = tourList.get(position);
-        holder.imgTour.setImageURI(tour.getImage());
+        Package tour = tourList.get(position);
+        holder.imgPackage.setImageURI(tour.getImage());
         holder.tvTitle.setText(tour.getTitle());
-        holder.tvDesc.setText(tour.getDescription());
-        holder.tvNumber.setText(tour.getNumber() + "");
-        holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(context, PackageActivity.class);
-            intent.putExtra("title", tour.getTitle());
-            intent.putExtra("path", tour.getPath());
+        holder.tvPrice.setText(tour.getCost());
+        holder.tvNumber.setText(tour.getTourDuration());
+        holder.itemView.setOnClickListener(v->{
+            Intent intent = new Intent(context, PackageDetailsActivity.class);
+            intent.putExtra("package", tour);
             context.startActivity(intent);
         });
     }
@@ -57,14 +56,14 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.Holder> {
 
     public class Holder extends RecyclerView.ViewHolder {
 
-        private SimpleDraweeView imgTour;
-        private TextView tvTitle, tvDesc, tvNumber;
+        private SimpleDraweeView imgPackage;
+        private TextView tvTitle, tvPrice, tvNumber;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
-            imgTour = itemView.findViewById(R.id.imgTour);
+            imgPackage = itemView.findViewById(R.id.imgPackage);
             tvTitle = itemView.findViewById(R.id.tvTitle);
-            tvDesc = itemView.findViewById(R.id.tvDesc);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
             tvNumber = itemView.findViewById(R.id.tvNumber);
         }
     }

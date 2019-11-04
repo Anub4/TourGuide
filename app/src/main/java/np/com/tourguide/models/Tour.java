@@ -5,6 +5,7 @@ public class Tour {
     private String image;
     private int number;
     private String title;
+    private String path;
 
     public Tour() {
     }
@@ -39,5 +40,13 @@ public class Tour {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

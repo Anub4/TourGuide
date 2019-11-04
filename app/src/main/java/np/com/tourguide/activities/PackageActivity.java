@@ -1,12 +1,13 @@
 package np.com.tourguide.activities;
 
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 
@@ -14,50 +15,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 import np.com.tourguide.R;
-import np.com.tourguide.adapters.TourAdapter;
-import np.com.tourguide.databinding.ActivityTourBinding;
+import np.com.tourguide.adapters.PackageAdapter;
+import np.com.tourguide.databinding.ActivityPackageBinding;
 import np.com.tourguide.listeners.MyChildEventListener;
-import np.com.tourguide.models.Tour;
+import np.com.tourguide.models.Package;
 import np.com.tourguide.utils.FirebaseUtils;
 
-public class TourActivity extends AppCompatActivity {
+public class PackageActivity extends AppCompatActivity {
 
-    private ActivityTourBinding b;
-    private TourAdapter adapter;
-    private List<Tour> tourList;
+    private ActivityPackageBinding b;
     private String path, title;
+    private List<Package> packageList;
+    private PackageAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        b = DataBindingUtil.setContentView(this, R.layout.activity_tour);
+        b = DataBindingUtil.setContentView(this, R.layout.activity_package);
 
         path = getIntent().getStringExtra("path");
         title = getIntent().getStringExtra("title");
         b.toolbar.setTitle(title);
-        b.toolbar.icBack.setOnClickListener(v -> super.onBackPressed());
+        b.toolbar.icBack.setOnClickListener(v->super.onBackPressed());
 
-        tourList = new ArrayList<>();
-        adapter = new TourAdapter(this, tourList);
+        packageList = new ArrayList<>();
+        adapter = new PackageAdapter(this, packageList);
 
-        b.recyclerView.setAdapter(adapter);
         b.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        b.recyclerView.setAdapter(adapter);
 
         b.swiperefresh.setRefreshing(true);
-        b.swiperefresh.setOnRefreshListener(() -> getTours());
-        getTours();
+        b.swiperefresh.setOnRefreshListener(() -> getPackageList());
+        getPackageList();
     }
 
-    private void getTours() {
-        tourList.clear();
+    private void getPackageList() {
+        packageList.clear();
         FirebaseUtils.database.child(path).addChildEventListener(new MyChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 super.onChildAdded(dataSnapshot, s);
-                Tour tour = dataSnapshot.getValue(Tour.class);
-                tour.setTitle(dataSnapshot.getKey());
-                tour.setPath(path + dataSnapshot.getKey() + "/packages");
-                tourList.add(tour);
+                Package pkg = dataSnapshot.getValue(Package.class);
+                pkg.setTitle(dataSnapshot.getKey());
+                packageList.add(pkg);
                 adapter.notifyDataSetChanged();
                 b.swiperefresh.setRefreshing(false);
             }

@@ -4,6 +4,7 @@ public class Destination {
     private String description;
     private String image;
     private String country;
+    private String path;
 
     public Destination() {
     }
@@ -30,5 +31,13 @@ public class Destination {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

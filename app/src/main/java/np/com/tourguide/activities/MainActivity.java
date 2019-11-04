@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,20 +45,25 @@ public class MainActivity extends AppCompatActivity {
         b.recyclerView.setAdapter(adapter);
         b.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        b.swiperefresh.setRefreshing(true);
+        b.swiperefresh.setOnRefreshListener(() -> loadDestinations());
         loadDestinations();
 
         b.toolbar.icLogout.setOnClickListener(v -> logout());
     }
 
     private void loadDestinations() {
+        destinationList.clear();
         FirebaseUtils.database.child("destinations").addChildEventListener(new MyChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 super.onChildAdded(dataSnapshot, s);
                 Destination destination = dataSnapshot.getValue(Destination.class);
                 destination.setCountry(dataSnapshot.getKey());
+                destination.setPath("destinations/" + dataSnapshot.getKey() + "/tours/");
                 destinationList.add(destination);
                 adapter.notifyDataSetChanged();
+                b.swiperefresh.setRefreshing(false);
             }
         });
     }

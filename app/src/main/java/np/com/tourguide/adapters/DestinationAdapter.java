@@ -40,7 +40,12 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
         Destination destination = destinationList.get(position);
         holder.tvCountry.setText(destination.getCountry());
         holder.imgDestination.setImageURI(destination.getImage());
-        holder.itemView.setOnClickListener(v->context.startActivity(new Intent(context, TourActivity.class).putExtra("key", destination.getCountry())));
+        holder.itemView.setOnClickListener(v->{
+            Intent intent = new Intent(context, TourActivity.class);
+            intent.putExtra("path", destination.getPath());
+            intent.putExtra("title", destination.getCountry());
+            context.startActivity(intent);
+        });
     }
 
     @Override
