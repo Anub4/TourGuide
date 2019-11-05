@@ -39,7 +39,7 @@ public class RegisterActivityTest {
     }
     @Test
     public void is_phone_number_valid() {
-        String phoneNumber="9841354221";
+        String phoneNumber="9841354123";
         assertEquals(true, validate.isValidPhoneNumber(phoneNumber));
     }
 

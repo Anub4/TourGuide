@@ -37,7 +37,7 @@ public class LoginTest {
 
     @Test
     public void is_email_valid() {
-        String text = "saileshlimbu04@gmail.com";
+        String text = "abhishek@gmail.com";
         assertEquals(true, validate.isValidEmail(text));
     }
 }

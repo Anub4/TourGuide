@@ -53,7 +53,7 @@ public class EnquiryFormTest {
     }
     @Test
     public void is_email_valid() {
-        String Email="sandeshmalla@gmail.com";
+        String Email="abhishek@gmail.com";
         assertEquals(true, validate.isValidEmail(Email));
     }
 
